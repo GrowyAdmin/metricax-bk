@@ -1,7 +1,6 @@
 import {response} from 'express'
 
 class ResponseDTO {
-  res = response;
 
   constructor(res) {
     this.res = res;

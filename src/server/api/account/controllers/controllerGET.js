@@ -13,12 +13,12 @@ import messageData from '../utils/lang/message.js';
 export default {
     async getUserByEmail(req, res) {
         const responseDTO = new ResponseDTO(res);
-        const email = req.EMAIL;
+        const { EMAIL: email } = req.params;
         try {
 
             const user = await model.getUserByEmail({email});
             if (!user) {
-                await responseDTO.errorServerResponse({
+                return responseDTO.errorServerResponse({
                     message: messageData.error.dont_exist_user,
                     nameError: 'dont_exist_user'
                 })

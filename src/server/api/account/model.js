@@ -8,4 +8,11 @@ export default {
             throw error;
         }
     },
+    async createUser({email, password, country}) {
+        try {
+            return dao.createUser({email, password, country});
+        } catch (error) {
+            throw error;
+        }
+    },
 }
